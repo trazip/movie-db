@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
 
-export default function Navbar() {
+export default function HeroSection() {
   return (
     <>
-     <div className="flex justify-center mt-8">
+     <div className="relative flex justify-center mt-8">
       <Image
           src="/got.jpeg"
           alt="game of thrones poster"
@@ -12,7 +12,7 @@ export default function Navbar() {
           height={400}
           objectFit="cover"
           quality={100}
-          className='rounded-lg'
+          className='rounded-lg shadow'
         />
      </div>
     </>
