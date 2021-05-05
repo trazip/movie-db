@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import Navbar from './components/Navbar'
-import HeroSection from './components/HeroSection'
+import Head from 'next/head';
+import Navbar from './components/Navbar';
+import MoviesList from './components/MoviesList';
 
-export default function Home() {
+export default function Home({ movies }) {
   return (
     <div className="h-screen bg-gray-800">
       <Head>
@@ -13,9 +13,24 @@ export default function Home() {
       <header>
         <Navbar />
       </header>
-      <main>
-        <HeroSection />
+      <main className="mx-auto">
+        <MoviesList movies={movies} />
       </main>
     </div>
-  )
+  );
+}
+
+export async function getStaticProps() {
+  const res = await fetch('http://localhost:3000/movies');
+  const data = await res.json();
+
+  return {
+    props: {
+      movies: data,
+    },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every second
+    revalidate: 1, // In seconds
+  };
 }
