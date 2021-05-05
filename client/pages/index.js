@@ -23,7 +23,7 @@ export default function Home({ movies }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch('http://localhost:3000/movies');
+  const res = await fetch('http://localhost:3000/api/v1/movies');
   const data = await res.json();
 
   return {

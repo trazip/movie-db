@@ -3,10 +3,10 @@ import Movie from './Movie';
 
 function MoviesList({ movies }) {
   return (
-    <div className="grid grid-cols-8 gap-1">
+    <div className="grid grid-cols-8 gap-x-1 gap-y-4">
       {movies.map((movie) => (
         <div className="flex justify-center">
-          <Movie />
+          <Movie movie={movie} />
         </div>
       ))}
     </div>
