@@ -8,7 +8,7 @@ export default function Navbar() {
           <div>
             <h1 className="font-extrabold text-white">Trackt</h1>
           </div>
-          <div className="flex w-1/3 justify-evenly">
+          {/* <div className="flex w-1/3 justify-evenly">
             <a
               href="#"
               className="font-light text-white opacity-60 hover:opacity-100"
@@ -33,7 +33,7 @@ export default function Navbar() {
             >
               Upcoming
             </a>
-          </div>
+          </div> */}
           <div className="flex space-x-6">
             <a className="flex items-center font-medium text-white">Login</a>
             <a className="flex items-center h-10 px-6 py-4 font-medium text-white bg-indigo-600 rounded-full">

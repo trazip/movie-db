@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Navbar from './components/Navbar';
 import MoviesList from './components/MoviesList';
+import Search from './components/Search';
 
 export default function Home({ movies }) {
   return (
@@ -14,6 +15,7 @@ export default function Home({ movies }) {
         <Navbar />
       </header>
       <main className="mx-auto">
+        <Search />
         <MoviesList movies={movies} />
       </main>
     </div>
