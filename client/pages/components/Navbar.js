@@ -35,9 +35,8 @@ export default function Navbar() {
             </a>
           </div> */}
           <div className="flex space-x-6">
-            <a className="flex items-center font-medium text-white">Login</a>
             <a className="flex items-center h-10 px-6 py-4 font-medium text-white bg-indigo-600 rounded-full">
-              Signup
+              Add a new film
             </a>
           </div>
         </div>
