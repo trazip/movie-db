@@ -8,7 +8,7 @@ export default function Form() {
   const addFilm = async (event) => {
     event.preventDefault();
 
-    const res = await fetch('http://localhost:3000/api/v1/movies', {
+    await fetch('http://localhost:3000/api/v1/movies', {
       body: JSON.stringify({
         title: event.target.title.value,
         year: event.target.year.value,
