@@ -19,7 +19,7 @@
 }
 
 .ais-SearchBox-submit {
-  @apply flex items-center justify-center transform -translate-x-12
+  @apply flex items-center justify-center transform -translate-x-12 focus:outline-none
 }
 
 .ais-SearchBox-submitIcon {
