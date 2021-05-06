@@ -1,3 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.ais-Hits-list {
+  @apply grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-x-1 gap-y-4
+}
+
+.ais-Hits-item {
+  @apply flex justify-center
+}
+
+.ais-SearchBox-form {
+  @apply flex justify-center my-12
+}
+
+.ais-SearchBox-input {
+  @apply block w-8/12 h-12 pr-12 text-white bg-gray-700 border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 pl-7 sm:text-sm
+}
+
+.ais-SearchBox-submit {
+  @apply flex items-center justify-center transform -translate-x-12
+}
+
+.ais-SearchBox-submitIcon {
+  @apply h-6 w-6 fill-current text-gray-500
+}
+
+.ais-SearchBox-resetIcon {
+  @apply hidden
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+
