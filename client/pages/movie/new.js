@@ -1,7 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 export default function Form() {
+  const router = useRouter();
+
   const addFilm = async (event) => {
     event.preventDefault();
 
@@ -9,6 +12,8 @@ export default function Form() {
       body: JSON.stringify({
         title: event.target.name.value,
         year: event.target.year.value,
+        image: event.target.image.value,
+        imdbID: event.target.imdbID.value,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -16,8 +21,7 @@ export default function Form() {
       method: 'POST',
     });
 
-    const result = await res.json();
-    // result.user => 'Ada Lovelace'
+    router.push('/');
   };
 
   return (
@@ -39,6 +43,7 @@ export default function Form() {
                       type="text"
                       name="title"
                       id="title"
+                      autoComplete="off"
                       className="flex-1 block w-full h-12 text-white bg-gray-800 rounded-none rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       placeholder="The Green Mile"
                     />
@@ -49,7 +54,7 @@ export default function Form() {
               <div className="grid grid-cols-6 gap-6">
                 <div className="col-span-4">
                   <label
-                    htmlFor="Imdb ID"
+                    htmlFor="ImdbID"
                     className="block text-sm font-medium text-gray-200"
                   >
                     Imdb ID
@@ -57,8 +62,8 @@ export default function Form() {
                   <div className="flex mt-1 rounded-md shadow-sm">
                     <input
                       type="text"
-                      name="title"
-                      id="title"
+                      name="imdbID"
+                      id="imdbID"
                       className="flex-1 block w-full h-12 text-white bg-gray-800 rounded-none rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       placeholder="tt0120689"
                     />
@@ -97,8 +102,8 @@ export default function Form() {
                   <div className="flex mt-1 rounded-md shadow-sm">
                     <input
                       type="text"
-                      name="title"
-                      id="title"
+                      name="image"
+                      id="image"
                       className="flex-1 block w-full h-12 text-white bg-gray-800 rounded-none rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                       placeholder="https://www.themoviedb.org/t/p/w440_and_h660_face/yQx12qEP0HZDOPcwVE4FR4ma12.jpg"
                     />

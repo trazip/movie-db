@@ -2,6 +2,6 @@ class Movie < ApplicationRecord
   include AlgoliaSearch
 
   algoliasearch do
-    attributes :title
+    attributes :title, :image, :year, :imdbID
   end
 end
