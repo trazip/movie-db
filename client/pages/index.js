@@ -5,8 +5,9 @@ import {
   Hits,
   SearchBox,
   Configure,
+  connectStateResults,
 } from 'react-instantsearch-dom';
-import Navbar from './components/Navbar';
+
 import Movie from './components/Movie';
 
 const searchClient = algoliasearch(
@@ -27,10 +28,21 @@ export default function Home() {
           <SearchBox />
         </header>
         <main className="mx-auto">
-          <Hits hitComponent={Movie} />
-          <Configure hitsPerPage={16} />
+          <Results>
+            <Hits hitComponent={Movie} />
+            <Configure hitsPerPage={16} />
+          </Results>
         </main>
       </InstantSearch>
     </div>
   );
 }
+
+export const Results = connectStateResults(
+  ({ searchState, searchResults, children }) =>
+    searchResults && searchResults.nbHits !== 0 ? (
+      children
+    ) : (
+      <div>No results have been found for {searchState.query}.</div>
+    )
+);
