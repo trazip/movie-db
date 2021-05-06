@@ -8,32 +8,6 @@ export default function Navbar() {
           <div>
             <h1 className="font-extrabold text-white">Trackt</h1>
           </div>
-          {/* <div className="flex w-1/3 justify-evenly">
-            <a
-              href="#"
-              className="font-light text-white opacity-60 hover:opacity-100"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="font-light text-white opacity-60 hover:opacity-100"
-            >
-              Movies
-            </a>
-            <a
-              href="#"
-              className="font-light text-white opacity-60 hover:opacity-100"
-            >
-              TV Shows
-            </a>
-            <a
-              href="#"
-              className="font-light text-white opacity-60 hover:opacity-100"
-            >
-              Upcoming
-            </a>
-          </div> */}
           <div className="flex space-x-6">
             <a className="flex items-center h-10 px-6 py-4 font-medium text-white bg-indigo-600 rounded-full">
               Add a new film

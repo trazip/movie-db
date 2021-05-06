@@ -7,16 +7,14 @@ import {
   Configure,
 } from 'react-instantsearch-dom';
 import Navbar from './components/Navbar';
-import MoviesList from './components/MoviesList';
 import Movie from './components/Movie';
-import Search from './components/Search';
 
 const searchClient = algoliasearch(
   'PDYVSJO4U8',
   '69a249f8602f8c7d42fb1a00dba7b92f'
 );
 
-export default function Home({ movies }) {
+export default function Home() {
   return (
     <div className="h-screen bg-gray-800">
       <Head>
@@ -33,24 +31,7 @@ export default function Home({ movies }) {
           <Hits hitComponent={Movie} />
           <Configure hitsPerPage={16} />
         </InstantSearch>
-        {/* <Search />
-        <MoviesList movies={movies} /> */}
       </main>
     </div>
   );
 }
-
-// export async function getStaticProps() {
-//   const res = await fetch('http://localhost:3000/api/v1/movies');
-//   const data = await res.json();
-
-//   return {
-//     props: {
-//       movies: data,
-//     },
-//     // Next.js will attempt to re-generate the page:
-//     // - When a request comes in
-//     // - At most once every second
-//     revalidate: 1, // In seconds
-//   };
-// }
