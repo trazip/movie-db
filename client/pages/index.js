@@ -8,7 +8,7 @@ import {
   connectStateResults,
 } from 'react-instantsearch-dom';
 
-import Movie from './components/Movie';
+import Movie from '../components/Movie';
 
 const searchClient = algoliasearch(
   'PDYVSJO4U8',
