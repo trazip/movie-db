@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const router = useRouter();
-  const href = '/movie/new';
+  const href = '/new';
 
   return (
     <>
